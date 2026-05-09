@@ -8,6 +8,7 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🏋️</text></svg>">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
+<<<<<<< HEAD
     .card::before { border-top-color: var(--magenta); border-left-color: var(--magenta); }
     .card::after  { border-bottom-color: var(--cyan);  border-right-color: var(--cyan);  }
     .card { border-color: rgba(255,0,200,0.2); box-shadow: 0 0 40px rgba(255,0,200,0.08), 0 0 80px rgba(0,245,255,0.05), inset 0 1px 0 rgba(255,255,255,0.05); }
@@ -18,6 +19,42 @@
 </head>
 <body class="auth-body">
   <div class="particles" id="particles"></div>
+=======
+    /* Override card border for register page */
+    .card::before {
+      border-top-color: var(--magenta);
+      border-left-color: var(--magenta);
+    }
+    .card::after {
+      border-bottom-color: var(--cyan);
+      border-right-color: var(--cyan);
+    }
+    .card {
+      border-color: rgba(255, 0, 200, 0.2);
+      box-shadow:
+        0 0 40px rgba(255, 0, 200, 0.08),
+        0 0 80px rgba(0, 245, 255, 0.05),
+        inset 0 1px 0 rgba(255,255,255,0.05);
+    }
+    .form-input:focus {
+      border-color: var(--magenta) !important;
+      box-shadow: 0 0 0 3px rgba(255, 0, 200, 0.1) !important;
+    }
+    .input-wrapper:focus-within .input-icon {
+      color: var(--magenta) !important;
+    }
+    body::before {
+      background:
+        radial-gradient(ellipse at 80% 20%, rgba(255, 0, 200, 0.09) 0%, transparent 50%),
+        radial-gradient(ellipse at 20% 80%, rgba(0, 245, 255, 0.07) 0%, transparent 50%);
+    }
+  </style>
+</head>
+<body class="auth-body">
+
+  <div class="particles" id="particles"></div>
+
+>>>>>>> 3ea220efb0a0872b0cb063e5a72b988929d3e9e3
   <div class="card">
     <div class="logo">
       <h1><span class="word1">DEPORTES</span> <span class="word2">NEON</span></h1>
@@ -26,6 +63,10 @@
     <div class="divider"></div>
 
     <form id="registerForm" onsubmit="handleRegister(event)" novalidate>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3ea220efb0a0872b0cb063e5a72b988929d3e9e3
       <div class="form-group">
         <label class="label-magenta">Nombre completo</label>
         <div class="input-wrapper">
@@ -33,6 +74,10 @@
           <input type="text" class="form-input" placeholder="Tu nombre" id="regName" autocomplete="name">
         </div>
       </div>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3ea220efb0a0872b0cb063e5a72b988929d3e9e3
       <div class="form-group">
         <label class="label-magenta">Email</label>
         <div class="input-wrapper">
@@ -40,6 +85,10 @@
           <input type="email" class="form-input" placeholder="usuario@ejemplo.com" id="regEmail" autocomplete="email">
         </div>
       </div>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3ea220efb0a0872b0cb063e5a72b988929d3e9e3
       <div class="form-group">
         <label class="label-magenta">Contraseña</label>
         <div class="input-wrapper">
@@ -47,6 +96,10 @@
           <input type="password" class="form-input" placeholder="••••••••" id="regPassword" autocomplete="new-password">
         </div>
       </div>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3ea220efb0a0872b0cb063e5a72b988929d3e9e3
       <div class="form-group">
         <label class="label-magenta">Confirmar contraseña</label>
         <div class="input-wrapper">
@@ -54,17 +107,28 @@
           <input type="password" class="form-input" placeholder="••••••••" id="regConfirm" autocomplete="new-password">
         </div>
       </div>
+<<<<<<< HEAD
       <button type="submit" class="btn-primary btn-magenta-full" style="margin-top:8px" id="regBtn">
+=======
+
+      <button type="submit" class="btn-primary btn-magenta-full" style="margin-top:8px;">
+>>>>>>> 3ea220efb0a0872b0cb063e5a72b988929d3e9e3
         Registrarse
       </button>
     </form>
 
     <p class="footer-link">
+<<<<<<< HEAD
       ¿Ya tienes cuenta? <a href="index.html" class="link-magenta">Inicia sesión aquí</a>
+=======
+      ¿Ya tienes cuenta?
+      <a href="index.html" class="link-magenta">Inicia sesión aquí</a>
+>>>>>>> 3ea220efb0a0872b0cb063e5a72b988929d3e9e3
     </p>
   </div>
 
   <script src="assets/app.js"></script>
+<<<<<<< HEAD
   <script src="assets/api.js"></script>
   <script>
     async function handleRegister(e) {
@@ -94,6 +158,26 @@
         btn.innerHTML = 'Registrarse';
         btn.disabled  = false;
       }
+=======
+  <script>
+    function handleRegister(e) {
+      e.preventDefault();
+      const pwd = document.getElementById('regPassword').value;
+      const confirm = document.getElementById('regConfirm').value;
+      if (pwd !== confirm) {
+        showNeonAlert('Las contraseñas no coinciden', 'error');
+        return;
+      }
+      const btn = e.target.querySelector('button');
+      btn.textContent = 'CREANDO CUENTA...';
+      btn.disabled = true;
+      setTimeout(() => {
+        showNeonAlert('¡Cuenta creada exitosamente!', 'success');
+        setTimeout(() => {
+          window.location.href = 'index.html';
+        }, 1500);
+      }, 1500);
+>>>>>>> 3ea220efb0a0872b0cb063e5a72b988929d3e9e3
     }
   </script>
 </body>

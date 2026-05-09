@@ -4,12 +4,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Deportes Neon — Iniciar Sesión</title>
+<<<<<<< HEAD
+=======
+  <!--
+    CREDENCIALES DE PRUEBA
+    ──────────────────────────────────────
+    Cliente:  cliente@deportesneon.com / cliente123
+    Admin:    admin@deportesneon.com   / admin123
+    ──────────────────────────────────────
+  -->
+>>>>>>> 3ea220efb0a0872b0cb063e5a72b988929d3e9e3
   <link rel="stylesheet" href="assets/styles.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🏋️</text></svg>">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body class="auth-body">
+<<<<<<< HEAD
   <div class="particles" id="particles"></div>
+=======
+
+  <div class="particles" id="particles"></div>
+
+>>>>>>> 3ea220efb0a0872b0cb063e5a72b988929d3e9e3
   <div class="card">
     <div class="logo">
       <h1><span class="word1">DEPORTES</span> <span class="word2">NEON</span></h1>
@@ -18,34 +34,61 @@
     <div class="divider"></div>
 
     <form id="loginForm" onsubmit="handleLogin(event)" novalidate>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3ea220efb0a0872b0cb063e5a72b988929d3e9e3
       <div class="form-group">
         <label class="label-cyan">Email</label>
         <div class="input-wrapper">
           <i class="fa-regular fa-envelope input-icon"></i>
+<<<<<<< HEAD
           <input type="email" class="form-input" placeholder="usuario@ejemplo.com"
                  id="loginEmail" autocomplete="email">
         </div>
       </div>
+=======
+          <input type="email" class="form-input" placeholder="usuario@ejemplo.com" id="loginEmail" autocomplete="email">
+        </div>
+      </div>
+
+>>>>>>> 3ea220efb0a0872b0cb063e5a72b988929d3e9e3
       <div class="form-group">
         <label class="label-cyan">Contraseña</label>
         <div class="input-wrapper">
           <i class="fa-solid fa-lock input-icon"></i>
+<<<<<<< HEAD
           <input type="password" class="form-input" placeholder="••••••••"
                  id="loginPassword" autocomplete="current-password">
         </div>
       </div>
       <a href="recuperar.html" class="forgot-link">¿Olvidaste tu contraseña?</a>
       <button type="submit" class="btn-primary btn-cyan-full" id="loginBtn">
+=======
+          <input type="password" class="form-input" placeholder="••••••••" id="loginPassword" autocomplete="current-password">
+        </div>
+      </div>
+
+      <a href="recuperar.html" class="forgot-link">¿Olvidaste tu contraseña?</a>
+
+      <button type="submit" class="btn-primary btn-cyan-full">
+>>>>>>> 3ea220efb0a0872b0cb063e5a72b988929d3e9e3
         Iniciar Sesión
       </button>
     </form>
 
     <p class="footer-link">
+<<<<<<< HEAD
       ¿No tienes cuenta? <a href="registro.html">Regístrate aquí</a>
+=======
+      ¿No tienes cuenta?
+      <a href="registro.html">Regístrate aquí</a>
+>>>>>>> 3ea220efb0a0872b0cb063e5a72b988929d3e9e3
     </p>
   </div>
 
   <script src="assets/app.js"></script>
+<<<<<<< HEAD
   <script src="assets/api.js"></script>
   <script>
     // Si ya hay sesión activa, redirigir al dashboard correcto
@@ -80,6 +123,41 @@
         btn.innerHTML = 'Iniciar Sesión';
         btn.disabled  = false;
       }
+=======
+  <script>
+    /*
+     * Credenciales válidas (demo frontend):
+     *   cliente@deportesneon.com / cliente123  → dashboard cliente
+     *   admin@deportesneon.com   / admin123    → dashboard admin
+     */
+    const USERS = [
+      { email: 'cliente@deportesneon.com', password: 'cliente123', role: 'cliente',       dest: 'dashboard-cliente.html' },
+      { email: 'admin@deportesneon.com',   password: 'admin123',   role: 'administrador', dest: 'dashboard.html' },
+    ];
+
+    function handleLogin(e) {
+      e.preventDefault();
+      const email = document.getElementById('loginEmail').value.trim().toLowerCase();
+      const pass  = document.getElementById('loginPassword').value;
+      const btn   = e.target.querySelector('button');
+
+      const user = USERS.find(u => u.email === email && u.password === pass);
+
+      if (!user) {
+        showNeonAlert('Credenciales incorrectas', 'error');
+        return;
+      }
+
+      btn.textContent = 'VERIFICANDO...';
+      btn.disabled = true;
+
+      setTimeout(() => {
+        showNeonAlert(`¡Bienvenido a Deportes Neon!`, 'success');
+        setTimeout(() => {
+          window.location.href = user.dest;
+        }, 1000);
+      }, 1500);
+>>>>>>> 3ea220efb0a0872b0cb063e5a72b988929d3e9e3
     }
   </script>
 </body>
